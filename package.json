@@ -23,6 +23,7 @@
     "core-js": "^2.6.10",
     "rxjs": "^6.5.3",
     "sweetalert2": "^7.33.1",
+    "tslib": "^1.10.0",
     "zone.js": "^0.8.29"
   },
   "devDependencies": {
@@ -43,7 +44,7 @@
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "^6.0.0",
     "ts-node": "~5.0.1",
-    "tslint": "~5.9.1",
+    "tslint": "^5.9.1",
     "typescript": "~2.7.2"
   }
 }
