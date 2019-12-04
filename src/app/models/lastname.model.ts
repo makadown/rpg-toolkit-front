@@ -1,7 +1,7 @@
 export class LastName {
 
     constructor (
-        public name: string,
+        public lastname: string,
         public _id?: string
     ) { }
 
