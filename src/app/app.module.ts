@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { HeaderComponent } from './pages/header/header.component';
 import { AppComponent } from './app.component';
@@ -31,6 +31,7 @@ import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component'
     FormsModule,
     ReactiveFormsModule,
     PAGES_ROUTES,
+    FontAwesomeModule,
     CommonModule, HttpClientModule
   ],
   providers: [],

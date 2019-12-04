@@ -13,12 +13,15 @@ import { HeroService } from '../../services/hero.service';
 import { HeroClassService } from '../../services/hero-class.service';
 import { Weapon } from '../../models/weapon.model';
 
+import { faDice } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
+  faDice = faDice;
 
   races: Race[] = [];
   classes: Class[] = [];
@@ -184,5 +187,12 @@ export class HeroComponent implements OnInit {
     this.htmlDex = this._randomizerService.generateInnerHTML( this.randomDex );
     document.getElementById('dexHTML').innerHTML = this.htmlDex + '<br/>';
     return false;
+  }
+
+  /**
+   * Generate random heroe values
+   */
+  randomize() {
+    
   }
 }

@@ -5,41 +5,46 @@
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>First name</label>
-                <input [(ngModel)]="hero.firstname" name="firstname" type="text" class="form-control" placeholder="Hero firstname" required />
+                <input [(ngModel)]="hero.firstname" name="firstname" type="text" class="form-control"
+                    placeholder="Hero firstname" required />
             </div>
             <div class="form-group col-md-6">
                 <label>Last name</label>
-                <input [(ngModel)]="hero.lastname" name="lastname" type="text" class="form-control" placeholder="Hero lastname" />
+                <input [(ngModel)]="hero.lastname" name="lastname" type="text" class="form-control"
+                    placeholder="Hero lastname" />
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label>Race</label>
-                <select (change)="changeRace( $event.target.value )" [(ngModel)]="race._id" name="race" class="form-control" required>
-                        <option value="">Select hero race</option>
-                        <option *ngFor="let race of races" [value]="race._id">
-                          {{ race.name }}
-                        </option>
-                    </select>
+                <select (change)="changeRace( $event.target.value )" [(ngModel)]="race._id" name="race"
+                    class="form-control" required>
+                    <option value="">Select hero race</option>
+                    <option *ngFor="let race of races" [value]="race._id">
+                        {{ race.name }}
+                    </option>
+                </select>
             </div>
             <div class="form-group col-md-6">
                 <label>Class</label>
-                <select (change)="changeClass( $event.target.value )" [(ngModel)]="class._id" name="class" class="form-control" required>
-                                    <option value="">Select hero class</option>
-                                    <option *ngFor="let class of classes" [value]="class._id">
-                                      {{ class.name }}
-                                    </option>
-                                </select>
+                <select (change)="changeClass( $event.target.value )" [(ngModel)]="class._id" name="class"
+                    class="form-control" required>
+                    <option value="">Select hero class</option>
+                    <option *ngFor="let class of classes" [value]="class._id">
+                        {{ class.name }}
+                    </option>
+                </select>
             </div>
         </div>
         <div class="form-row">
             <label>Weapon</label>
-            <select (change)="changeWeapon( $event.target.value )" [(ngModel)]="weapon._id" name="weapon" class="form-control" required>
-                                                            <option value="">Select weapon</option>
-                                                            <option *ngFor="let weapon of weapons" [value]="weapon._id">
-                                                              {{ weapon.name }}
-                                                            </option>
-                    </select>
+            <select (change)="changeWeapon( $event.target.value )" [(ngModel)]="weapon._id" name="weapon"
+                class="form-control" required>
+                <option value="">Select weapon</option>
+                <option *ngFor="let weapon of weapons" [value]="weapon._id">
+                    {{ weapon.name }}
+                </option>
+            </select>
         </div>
         <div class="form-row text-center">
             <hr>
@@ -49,40 +54,65 @@
         <div class="form-row">
             <div class="form-group col-md-2">
                 <label>Str</label>
-                <input [(ngModel)]="str" name="str" type="number" class="form-control" placeholder="Hero str" readonly />
+                <input [(ngModel)]="str" name="str" type="number" class="form-control" placeholder="Hero str"
+                    readonly />
             </div>
             <div class="form-group col-md-2">
-                <label> <div id="strHTML">-<br/></div></label>
-                <a href='#' (click)="generateStr()" class="btn btn-primary">
-                    <i class="fa fa-magic"> generate str</i>
-                </a>
+                <div class="col-md-1">
+                    <label>
+                        <div id="strHTML">-<br /></div>
+                    </label>
+                </div>
+                <div class="col-md-1">
+                    <a href='#' (click)="generateStr()" class="btn btn-primary">
+                        <fa-icon [icon]="faDice"></fa-icon> STR
+                    </a>
+                </div>
             </div>
             <div class="form-group col-md-2">
                 <label>Int</label>
-                <input [(ngModel)]="int" name="int" type="number" class="form-control" placeholder="Hero int" readonly />
+                <input [(ngModel)]="int" name="int" type="number" class="form-control" placeholder="Hero int"
+                    readonly />
             </div>
             <div class="form-group col-md-2">
-                <label><div id="intHTML">-<br/></div></label>
-                <a href='#' (click)="generateInt()" class="btn btn-primary">
-                    <i class="fa fa-magic"> generate int</i>
-                </a>
+                <div class="col-md-1">
+                    <label>
+                        <div id="intHTML">-<br /></div>
+                    </label>
+                </div>
+                <div class="col-md-1">
+                    <a href='#' (click)="generateInt()" class="btn btn-primary">
+                        <fa-icon [icon]="faDice"></fa-icon> INT
+                    </a>
+                </div>
             </div>
             <div class="form-group col-md-2">
                 <label>Dex</label>
-                <input [(ngModel)]="dex" name="dex" type="number" class="form-control" placeholder="Hero dex" readonly />
+                <input [(ngModel)]="dex" name="dex" type="number" class="form-control" placeholder="Hero dex"
+                    readonly />
             </div>
             <div class="form-group col-md-2">
-                <label><div id="dexHTML">-<br/></div></label>
-                <a href='#' (click)="generateDex()" class="btn btn-primary">
-                    <i class="fa fa-magic"> generate dex</i>
-                </a>
+                <div class="col-md-1">
+                    <label>
+                        <div id="dexHTML">-<br /></div>
+                    </label>
+                </div>
+                <div class="col-md-1">
+                    <a href='#' (click)="generateDex()" class="btn btn-primary">
+                        <fa-icon [icon]="faDice"></fa-icon> DEX
+                    </a>
+                </div>
             </div>
         </div>
         <div class="form-group">
+            <button type="button" (click)="randomize()" class="btn btn-warning m-r-10">
+                <i class="fa fa-magic"></i>
+                Randomize Hero Values
+            </button>
             <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">
-                        <i class="fa fa-save"></i>
-                          Save
-                        </button>
+                <i class="fa fa-save"></i>
+                Save
+            </button>
             <a routerLink="/heroes" class="btn btn-inverse waves-effect waves-light">Cancel</a>
         </div>
 
@@ -90,46 +120,5 @@
 </form>
 
 <div class="row animated fadeIn">
-
-    <div class="col-md-12">
-        <div class="card card-body">
-
-
-            <div class="row">
-                <div class="col-sm-6 col-xs-6">
-                    <div class="form-group">
-
-                    </div>
-                    <div class="form-group">
-
-                    </div>
-                    <div class="form-group">
-
-                    </div>
-                    <div class="form-group">
-
-                    </div>
-
-                </div>
-                <div class="col-sm-6 col-xs-6">
-                    <div class="form-group">
-
-                    </div>
-                    <div class="form-group row">
-
-                    </div>
-                    <div class="form-group row">
-
-                    </div>
-                    <div class="form-group row">
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
 
 </div>
