@@ -105,7 +105,8 @@
             </div>
         </div>
         <div class="form-group">
-            <button type="button" (click)="randomize()" class="btn btn-warning m-r-10">
+            <button *ngIf="!hero._id" type="button" [disabled]="!catalogosCargados"
+                (click)="randomize()" class="btn btn-warning m-r-10">
                 <i class="fa fa-magic"></i>
                 Randomize Hero Values
             </button>

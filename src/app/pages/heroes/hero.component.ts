@@ -25,6 +25,7 @@ import { LastNameService } from '../../services/last-name.service';
   styleUrls: ['./hero.component.css']
 })
 export class HeroComponent implements OnInit {
+  catalogosCargados = false;
   faDice = faDice;
 
   races: Race[] = [];
@@ -105,6 +106,7 @@ export class HeroComponent implements OnInit {
     });
     this._lastNameService.loadHeroLastNames().subscribe(lastNames => {
       this.lastNames = lastNames;
+      this.catalogosCargados = true;
     });
   }
 
@@ -210,18 +212,37 @@ export class HeroComponent implements OnInit {
    * Generate random heroe values
    */
   randomize() {
-    const randomFirstNamePos = Math.floor(Math.random() * ( this.firstNames.length - 1));
-    const randomLastNamePos = Math.floor(Math.random() * ( this.lastNames.length - 1));
-    const randomClassPos = Math.floor(Math.random() * ( this.classes.length - 1));
-    const randomRacePos = Math.floor(Math.random() * ( this.races.length - 1));
-    const randomWeaponPos = Math.floor(Math.random() * ( this.weapons.length - 1));
+    const randomFirstNamePos = Math.floor(Math.random() * (this.firstNames.length - 1));
+    const randomLastNamePos = Math.floor(Math.random() * (this.lastNames.length - 1));
+    const randomClassPos = Math.floor(Math.random() * (this.classes.length - 1));
+    let randomRacePos = Math.floor(Math.random() * (this.races.length - 1));
+    const randomWeaponPos = Math.floor(Math.random() * (this.weapons.length - 1));
     this.hero.firstname = this.firstNames[randomFirstNamePos].name;
     this.hero.lastname = this.lastNames[randomLastNamePos].lastname;
     this.generateStr();
     this.generateInt();
     this.generateDex();
     this.changeClass(this.classes[randomClassPos]._id);
+    /* If hero's first and last name doesnt contain 'R' or 'H' and the race is dwarf, change
+    the race because Dwarfs First and Last name must contain at least an "R" or an "H" */
+    if (!((this.hero.firstname.toLowerCase().includes('h') || this.hero.firstname.toLowerCase().includes('r')) &&
+      (this.hero.lastname.toLowerCase().includes('h') || this.hero.lastname.toLowerCase().includes('r'))) &&
+      this.races[randomRacePos].name === 'Dwarf') {
+      while (this.races[randomRacePos].name === 'Dwarf') {
+        randomRacePos = Math.floor(Math.random() * (this.races.length - 1));
+      }
+    }
     this.changeRace(this.races[randomRacePos]._id);
     this.changeWeapon(this.weapons[randomWeaponPos]._id);
+    /* Half-orcs and Dragonborns don’t have a Last Name */
+    if (this.races[randomRacePos].name === 'Half-orc' ||
+      this.races[randomRacePos].name === 'Dragonborn') {
+      this.hero.lastname = '';
+    }
+    /* Elfs’ Last Name must be its First Name, but mirrored (i.e. Jimmy => Ymmij) */
+    if (this.races[randomRacePos].name === 'Elf') {
+      this.hero.lastname = this.hero.firstname.toLowerCase().split('').reverse().join('');
+      this.hero.lastname = this.hero.lastname[0].toUpperCase() + this.hero.lastname.slice(1);
+    }
   }
 }
