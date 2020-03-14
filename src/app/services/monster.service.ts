@@ -50,7 +50,7 @@ export class MonsterService {
     // TODO: Tratar de poner todos los swals en los componentes y no en los servicios.
     return this.http.delete(url).pipe(
                     map( (resp: any) => {
-                      swal('Success', 'Monster deleted', 'success');
+                      swal.fire('Success', 'Monster deleted', 'success');
                       return resp;
                     } ));
   }
@@ -68,7 +68,7 @@ export class MonsterService {
 
       return this.http.put( url, monsters ).pipe(
                 map( (resp: any) => {
-                  swal('Monster updated', monsters.name, 'success');
+                  swal.fire('Monster updated', monsters.name, 'success');
                   return resp.monsters;
 
                 }));
@@ -77,7 +77,7 @@ export class MonsterService {
       // creating
       return this.http.post( url, monsters ).pipe(
               map( (resp: any) => {
-                swal('Monster created', monsters.name, 'success');
+                swal.fire('Monster created', monsters.name, 'success');
                 return resp.monsters;
               }));
     }

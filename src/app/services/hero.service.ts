@@ -51,7 +51,7 @@ export class HeroService {
     // TODO: Tratar de poner todos los swals en los componentes y no en los servicios.
     return this.http.delete(url).pipe(
                     map( (resp: any) => {
-                      swal('Success', 'Hero deleted', 'success');
+                      swal.fire('Success', 'Hero deleted', 'success');
                       return resp;
                     } ));
   }
@@ -69,7 +69,7 @@ export class HeroService {
 
       return this.http.put( url, heroe ).pipe(
                 map( (resp: any) => {
-                  swal('Hero updated', heroe.firstname, 'success');
+                  swal.fire('Hero updated', heroe.firstname, 'success');
                   return resp.heroe;
 
                 }));
@@ -78,7 +78,7 @@ export class HeroService {
       // creating
       return this.http.post( url, heroe ).pipe(
               map( (resp: any) => {
-                swal('Hero created', heroe.firstname, 'success');
+                swal.fire('Hero created', heroe.firstname, 'success');
                 return resp.heroe;
               }));
     }

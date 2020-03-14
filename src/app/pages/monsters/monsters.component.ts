@@ -27,15 +27,15 @@ export class MonstersComponent implements OnInit {
               .subscribe( monsters => {
                 this.monsters = monsters;
                 this.loading = false;
-                console.log(this.monsters);
+                // console.log(this.monsters);
           });
   }
 
   deleteMonster(monster: Monster) {
-    swal({
+    swal.fire({
       title: 'Are you sure?',
       text: 'You are about to delete ' + monster.name,
-      type: 'warning',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',

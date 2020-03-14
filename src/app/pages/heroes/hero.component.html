@@ -37,16 +37,18 @@
             </div>
         </div>
         <div class="form-row">
-            <label>Weapon</label>
-            <select (change)="changeWeapon( $event.target.value )" [(ngModel)]="weapon._id" name="weapon"
-                class="form-control" required>
-                <option value="">Select weapon</option>
-                <option *ngFor="let weapon of weapons" [value]="weapon._id">
-                    {{ weapon.name }}
-                </option>
-            </select>
+            <div class="form-group col-md-12">
+                <label>Weapon</label>
+                <select (change)="changeWeapon( $event.target.value )" [(ngModel)]="weapon._id" name="weapon"
+                    class="form-control" required>
+                    <option value="">Select weapon</option>
+                    <option *ngFor="let weapon of weapons" [value]="weapon._id">
+                        {{ weapon.name }}
+                    </option>
+                </select>
+            </div>
         </div>
-        <div class="form-row text-center">
+        <div class="form-row text-center mt-1">
             <hr>
             <h4>Stats</h4>
             <hr>
@@ -63,7 +65,7 @@
                         <div id="strHTML">-<br /></div>
                     </label>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 text-right">
                     <a href='#' (click)="generateStr()" class="btn btn-primary">
                         <fa-icon [icon]="faDice"></fa-icon> STR
                     </a>
@@ -80,7 +82,7 @@
                         <div id="intHTML">-<br /></div>
                     </label>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 text-right">
                     <a href='#' (click)="generateInt()" class="btn btn-primary">
                         <fa-icon [icon]="faDice"></fa-icon> INT
                     </a>
@@ -97,16 +99,16 @@
                         <div id="dexHTML">-<br /></div>
                     </label>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 text-right">
                     <a href='#' (click)="generateDex()" class="btn btn-primary">
                         <fa-icon [icon]="faDice"></fa-icon> DEX
                     </a>
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <button *ngIf="!hero._id" type="button" [disabled]="!catalogosCargados"
-                (click)="randomize()" class="btn btn-warning m-r-10">
+        <div class="form-group mt-3 text-right">
+            <button *ngIf="!hero._id" type="button" [disabled]="!catalogosCargados" (click)="randomize()"
+                class="btn btn-warning m-r-10">
                 <i class="fa fa-magic"></i>
                 Randomize Hero Values
             </button>
