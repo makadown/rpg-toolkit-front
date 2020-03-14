@@ -1,6 +1,7 @@
 # Rpg Toolkit (FrontEnd)
 
-This app was generated from a failed interview at some place that never wanted to review this project.
+Este es un proyecto que es un test de cierta empresa de desarrollo que nunca se molestó en
+darme retroalimentacion ni respuesta alguno, de modo que me tomé el tiempo de hacerlo a mi manera.
 
 Just for fun By Mario Arturo Serrano Flores. 2019-2020
 
