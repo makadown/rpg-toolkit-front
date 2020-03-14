@@ -33,10 +33,10 @@ export class HeroesComponent implements OnInit {
   }
 
   deleteHero(hero: Hero) {
-    swal({
+    swal.fire({
       title: 'Are you sure?',
       text: 'You are about to delete ' + hero.firstname,
-      type: 'warning',
+      icon: 'warning',
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',

@@ -1,5 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
-
 #themecolors a {
     cursor: pointer;
 }
@@ -32,4 +31,33 @@
 
 .oculto {
     display: none;
+}
+
+.top-navbar {
+    min-height: 45px !important;
+    max-height: 50px !important;
+}
+/*
+.container-fluid {
+    padding: 1.5px 5px;
+}
+
+.card-body {
+    padding: 0.8rem 1.5rem;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+*/
+.card-title {
+    margin-bottom: 0px;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.btn, .table, .form-group {
+    font-weight: lighter;
+    font-size: small;
 }
