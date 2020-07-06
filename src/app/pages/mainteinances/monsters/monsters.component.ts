@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Monster } from '../../models/monster.model';
-import { MonsterService } from '../../services/monster.service';
+import { Monster } from '../../../models/monster.model';
+import { MonsterService } from '../../../services/monster.service';
 
 import swal from 'sweetalert2';
 

@@ -9,20 +9,19 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HeaderComponent } from './pages/header/header.component';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { HeroesComponent } from './pages/heroes/heroes.component';
-import { HeroComponent } from './pages/heroes/hero.component';
-import { MonstersComponent } from './pages/monsters/monsters.component';
-import { MonsterComponent } from './pages/monsters/monster.component';
+import { HeroesComponent } from './pages/mainteinances/heroes/heroes.component';
+import { HeroComponent } from './pages/mainteinances/heroes/hero.component';
+import { MonstersComponent } from './pages/mainteinances/monsters/monsters.component';
+import { MonsterComponent } from './pages/mainteinances/monsters/monster.component';
 import { AboutComponent } from './pages/about/about.component';
 import { PAGES_ROUTES } from './app.routes';
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
-import { BreadcrumbsComponent } from './pages/breadcrumbs/breadcrumbs.component';
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 
 @NgModule({
   declarations: [
     AppComponent, DashboardComponent, HeroesComponent, HeaderComponent, SidebarComponent,
-    HeroComponent, MonsterComponent, MonstersComponent, AboutComponent, BreadcrumbsComponent,
+    HeroComponent, MonsterComponent, MonstersComponent, AboutComponent,
     NopagefoundComponent
   ],
   imports: [

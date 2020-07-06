@@ -1,23 +1,23 @@
-import { RandomizerService } from './../../services/randomizer.service';
+import { RandomizerService } from '../../../services/randomizer.service';
 
-import { WeaponService } from './../../services/weapon.service';
+import { WeaponService } from '../../../services/weapon.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Hero } from '../../models/hero.model';
-import { Race } from '../../models/race.model';
-import { Class } from '../../models/class.model';
-import { Randomizer } from '../../models/randomizer.model';
+import { Hero } from '../../../models/hero.model';
+import { Race } from '../../../models/race.model';
+import { Class } from '../../../models/class.model';
+import { Randomizer } from '../../../models/randomizer.model';
 import { Router, ActivatedRoute } from '@angular/router';
-import { HeroRaceService } from '../../services/hero-race.service';
-import { HeroService } from '../../services/hero.service';
-import { HeroClassService } from '../../services/hero-class.service';
-import { Weapon } from '../../models/weapon.model';
+import { HeroRaceService } from '../../../services/hero-race.service';
+import { HeroService } from '../../../services/hero.service';
+import { HeroClassService } from '../../../services/hero-class.service';
+import { Weapon } from '../../../models/weapon.model';
 
 import { faDice } from '@fortawesome/free-solid-svg-icons';
-import { FirstName } from '../../models/firstname.model';
-import { LastName } from '../../models/lastname.model';
+import { FirstName } from '../../../models/firstname.model';
+import { LastName } from '../../../models/lastname.model';
 import { FirstNameService } from 'src/app/services/first-name.service';
-import { LastNameService } from '../../services/last-name.service';
+import { LastNameService } from '../../../services/last-name.service';
 
 @Component({
   selector: 'app-hero',

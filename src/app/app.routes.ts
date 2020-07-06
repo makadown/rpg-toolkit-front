@@ -1,10 +1,10 @@
 import { NopagefoundComponent } from './pages/nopagefound/nopagefound.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { Routes, RouterModule } from '@angular/router';
-import { HeroesComponent } from './pages/heroes/heroes.component';
-import { HeroComponent } from './pages/heroes/hero.component';
-import { MonstersComponent } from './pages/monsters/monsters.component';
-import { MonsterComponent } from './pages/monsters/monster.component';
+import { HeroesComponent } from './pages/mainteinances/heroes/heroes.component';
+import { HeroComponent } from './pages/mainteinances/heroes/hero.component';
+import { MonstersComponent } from './pages/mainteinances/monsters/monsters.component';
+import { MonsterComponent } from './pages/mainteinances/monsters/monster.component';
 import { AboutComponent } from './pages/about/about.component';
 
 const pagesRoutes: Routes = [
